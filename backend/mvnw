@@ -1,0 +1,31 @@
+#!/bin/sh
+# Maven Wrapper simplificado (Linux/macOS).
+# Baixa o Maven 3.9.11 na primeira execução (em ~/.m2/wrapper) e repassa os argumentos.
+# Uso: ./mvnw spring-boot:run   |   ./mvnw test
+set -e
+BASEDIR=$(cd "$(dirname "$0")" && pwd)
+PROPS="$BASEDIR/.mvn/wrapper/maven-wrapper.properties"
+URL=$(grep '^distributionUrl=' "$PROPS" | cut -d= -f2- | tr -d '\r')
+NAME=$(grep '^distributionName=' "$PROPS" | cut -d= -f2- | tr -d '\r')
+DEST="${MAVEN_USER_HOME:-$HOME/.m2}/wrapper/dists/$NAME"
+MVN="$DEST/$NAME/bin/mvn"
+
+if [ ! -f "$MVN" ]; then
+  echo "Baixando $NAME (somente na primeira execução)..."
+  mkdir -p "$DEST"
+  ZIP="$DEST/$NAME.zip"
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL -o "$ZIP" "$URL"
+  else
+    wget -q -O "$ZIP" "$URL"
+  fi
+  if command -v unzip >/dev/null 2>&1; then
+    unzip -q -o "$ZIP" -d "$DEST"
+  else
+    (cd "$DEST" && jar xf "$ZIP")
+  fi
+  rm -f "$ZIP"
+  chmod +x "$MVN"
+fi
+
+exec "$MVN" -f "$BASEDIR/pom.xml" "$@"
