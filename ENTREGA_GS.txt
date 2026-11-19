@@ -8,4 +8,4 @@ Integrantes:
 - Rodrigo Arantes da Silva Philippi - RM 557594
 
 Repositório GitHub:
-https://github.com/SEU-USUARIO/urban-risk-gs
+https://github.com/12345-oss/urban-risk-gs
