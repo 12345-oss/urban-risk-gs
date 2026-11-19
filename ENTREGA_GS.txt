@@ -9,3 +9,6 @@ Integrantes:
 
 Repositório GitHub:
 https://github.com/12345-oss/urban-risk-gs
+
+Vídeo da demonstração (YouTube):
+https://youtu.be/A75axkqiraU

@@ -6,6 +6,10 @@ Plataforma de monitoramento de riscos urbanos do dia a dia (**alagamentos, ilhas
 
 O app foi pensado para não travar quando o servidor cai: ele avisa que está desconectado, continua mostrando os últimos dados (marcados como desatualizados), guarda os relatos para enviar depois e se reconecta sozinho quando o backend volta.
 
+## Vídeo da demonstração
+
+▶️ **https://youtu.be/A75axkqiraU** (cerca de 2 min): API Spring Boot rodando, app recebendo dados em tempo real, alerta de tempestade escalando até Crítico, backend parado com o app avisando que está desconectado sem travar, e reconexão automática com envio do relato que estava na fila.
+
 ## Integrantes
 
 | Nome completo | RM |
