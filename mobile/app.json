@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Risco Urbano SP",
+    "slug": "risco-urbano-sp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.fiap.riscourbano"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "br.com.fiap.riscourbano"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "name": "Risco Urbano SP",
+      "themeColor": "#0B3D5C"
+    }
+  }
+}
