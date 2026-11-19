@@ -1,0 +1,10 @@
+# Sobe só a API (o app roda com o Expo).
+#   docker compose up --build        -> inicia
+#   docker compose stop api          -> para (para demonstrar o app desconectado)
+#   docker compose start api         -> volta
+services:
+  api:
+    build: ./backend
+    container_name: urban-risk-api
+    ports:
+      - "8080:8080"
