@@ -1,0 +1,11 @@
+GLOBAL SOLUTION - Advanced Programming And Mobile Dev
+Engenharia da Computação - 3º ano - Turma 3ECR
+Projeto: Risco Urbano SP - Urban Risk Intelligence Platform
+(API Spring Boot + app React Native/Expo em tempo real)
+
+Integrantes:
+- Henrique Monteiro Khouri - RM 555572
+- Rodrigo Arantes da Silva Philippi - RM 557594
+
+Repositório GitHub:
+https://github.com/SEU-USUARIO/urban-risk-gs
