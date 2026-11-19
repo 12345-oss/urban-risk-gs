@@ -1,5 +1,7 @@
 package br.com.fiap.urbanrisk.api;
 
+import jakarta.websocket.ContainerProvider;
+import jakarta.websocket.WebSocketContainer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -87,7 +89,11 @@ class ApiIntegrationTest {
             }
         };
 
-        WebSocketSession sessao = new StandardWebSocketClient()
+        // O cliente WebSocket do Tomcat aceita só 8 KB por mensagem por padrão; o snapshot é maior.
+        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+        container.setDefaultMaxTextMessageBufferSize(1024 * 1024);
+
+        WebSocketSession sessao = new StandardWebSocketClient(container)
                 .execute(handler, "ws://localhost:" + porta + "/ws")
                 .get(5, TimeUnit.SECONDS);
         try {
